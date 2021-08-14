@@ -75,7 +75,7 @@ body, html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-content: center;
 }
 
@@ -85,6 +85,7 @@ body, html {
     text-transform: uppercase;
     color: white;
     margin-bottom: 20px;
+    margin-top: 200px;
 }
 
 #player-choice {
@@ -93,7 +94,7 @@ body, html {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    margin-top: 100px;
+    
 }
 
 .select-side-btn {
@@ -109,6 +110,10 @@ body, html {
   border-radius: 15px;
 }
 
-#ironman {
-    
+#main-menu-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
 }
