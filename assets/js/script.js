@@ -1,6 +1,6 @@
 const boxes = Array.from(document.getElementsByClassName('box'));
 
-const playText = getElementsById('playText');
+const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
 const O_TEXT = "O";
 const X_TEXT = "X";
@@ -33,7 +33,7 @@ const boxClicked = (e) => {
         e.target.innerText = currentPlayer;
 
         if(playerHasWon()){
-            playText.innerText = `${currentPlayer} has won!`;
+            gameTitle.innerText = `${currentPlayer} has won!`;
             return;
         }
         currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
@@ -41,45 +41,41 @@ const boxClicked = (e) => {
 }
 
 const playerHasWon = () => {
-    //from top left, check across, down, and diagonal
-  if (spaces[0] === player) {
-    if (spaces[1] === player && spaces[2] === player) {
-      console.log(`${player} wins up top`);
-      return true;
+    if(spaces[0] === currentPlayer){
+        if(spaces[1] === currentPlayer && spaces[2] === currentPlayer){
+            console.log(`${currentPlayer} wins up top.`)
+            return true;
+        }
+        if(spaces[3] === currentPlayer && spaces[6] === currentPlayer){
+            console.log(`${currentPlayer} wins on the left.`)
+            return true;
+        }
+        if(spaces[4] === currentPlayer && spaces[8] === currentPlayer){
+            console.log(`${currentPlayer} wins diagonally.`)
+            return true;
+        }
+    } 
+    if(spaces[8] === currentPlayer){
+        if(spaces[2] === currentPlayer && spaces[5] === currentPlayer){
+            console.log(`${currentPlayer} wins on the right.`)
+            return true;
+        }
+        if(spaces[6] === currentPlayer && spaces[7] === currentPlayer){
+            console.log(`${currentPlayer} wins on the bottom.`)
+            return true;
+        }
     }
-    if (spaces[3] === player && spaces[6] === player) {
-      console.log(`${player} wins on the left`);
-      return true;
+    if(spaces[4] === currentPlayer){
+        if(spaces[1] === currentPlayer && spaces[7] === currentPlayer){
+            console.log(`${currentPlayer} wins vertically in the middle.`)
+            return true;
+        }
+        if(spaces[3] === currentPlayer && spaces[5] === currentPlayer){
+            console.log(`${currentPlayer} wins horizontally across the middle.`)
+            return true;
+        }
     }
-    if (spaces[4] === player && spaces[8] === player) {
-      console.log(`${player} wins on the diagonal`);
-      return true;
-    }
-  }
-  //from bottom check up and across
-  if (spaces[8] === player) {
-    if (spaces[2] === player && spaces[5] === player) {
-      console.log(`${player} wins on the right`);
-      return true;
-    }
-    if (spaces[7] === player && spaces[6] === player) {
-      console.log(`${player} wins on the bottom`);
-      return true;
-    }
-  }
-  //from middle check middle vertical and middle horizontal
-  if (spaces[4] === player) {
-    if (spaces[3] === player && spaces[5] === player) {
-      console.log(`${player} wins on the middle horizontal`);
-      return true;
-    }
-    if (spaces[1] === player && spaces[7] === player) {
-      console.log(`${player} wins on the middle vertical`);
-      return true;
-    }
-  }
-};
-
+}
 
 drawBoard();
 
