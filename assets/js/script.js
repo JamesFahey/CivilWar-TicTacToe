@@ -1,5 +1,9 @@
 const boxes = Array.from(document.getElementsByClassName('box'));
 
+const O_TEXT = "O";
+const X_TEXR = "X";
+let currentPlayer = O_TEXT;
+
 const drawBoard = () => {
     boxes.forEach((box, index) => {
         let styleString = '';
@@ -16,8 +20,13 @@ const drawBoard = () => {
             styleString += `border-top: 3px solid #3a3a3a;`;
         }
         box.style = styleString;
+        box.addEventListener('click', boxClicked)
     })
 };
+
+const boxClicked = (e) => {
+    console.log('boc clicked');
+}
 
 drawBoard();
 
