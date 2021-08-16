@@ -2,9 +2,14 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
-const O_TEXT = "O";
+// const O_TEXT = "O";
 const X_TEXT = "X";
-let currentPlayer = O_TEXT;
+// let currentPlayer = O_TEXT;
+
+var ironman = document.createElement('ironman')
+ironman.src = '..assets/images/iron-man.png';
+
+let currentPlayer = ironman;
 
 const drawBoard = () => {
     boxes.forEach((box, index) => {
@@ -30,13 +35,13 @@ const boxClicked = (e) => {
     const id = e.target.id;
     if (!spaces[id]){
         spaces[id] = currentPlayer;
-        e.target.innerText = currentPlayer;
+        e.target.innerHTML = currentPlayer;
 
         if(playerHasWon()){
             gameTitle.innerText = `${currentPlayer} has won!`;
             return;
         }
-        currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
+        currentPlayer = currentPlayer === img ? X_TEXT : img;
     }
 }
 
