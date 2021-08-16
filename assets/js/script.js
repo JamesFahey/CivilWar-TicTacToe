@@ -2,12 +2,13 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
-const O_TEXT = document.createElement('img').innerHTML="<img src='..assets/images/iron-man.png' />";
+const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/iron-man.png' />";
 const X_TEXT = "X";
 let currentPlayer = O_TEXT;
 
-var ironman = document.createElement('img').innerHTML;
-ironman.src = '..assets/images/iron-man.png';
+var img = document.createElement('img').innerHTML;
+img.src = '..assets/images/iron-man.png';
+
 
 
 // let currentPlayer = ironman;
