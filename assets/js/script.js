@@ -3,15 +3,10 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/iron-man.png' />";
-const X_TEXT = "X";
+const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/captain-america-shield.png' />";
 let currentPlayer = O_TEXT;
 
-var img = document.createElement('img').innerHTML;
-img.src = '..assets/images/iron-man.png';
 
-
-
-// let currentPlayer = ironman;
 
 const drawBoard = () => {
     boxes.forEach((box, index) => {
