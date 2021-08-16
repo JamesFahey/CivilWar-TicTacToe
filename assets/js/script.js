@@ -2,26 +2,35 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
-const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/iron-man.png' />";
-const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/captain-america-shield.png' />";
+const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo.png'/>";
+const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/cap-sheild.png' />";
 let currentPlayer = O_TEXT;
 
+// const ironmanBtn = document.getElementById("ironmanBtn") 
+// const captainBtn = document.getElementById("captainBtn");
 
+// ironmanBtn.addEventListener("click", function(){
+//     if (ironmanBtn.clicked == true){
+//         currentPlayer = O_TEXT;        
+//     } if(no.clicked == true) {
+//         currentPlayer = X_TEXT;
+//     }
+// });
 
 const drawBoard = () => {
     boxes.forEach((box, index) => {
         let styleString = '';
         if (index < 3) {
-            styleString += `border-bottom: 3px solid #3a3a3a;`;
+            styleString += `border-bottom: 3px solid #ffffff;`;
         }
         if (index % 3 === 0) {
-            styleString += `border-right: 3px solid #3a3a3a;`;
+            styleString += `border-right: 3px solid #ffffff;`;
         }
         if (index % 3 === 2) {
-            styleString += `border-left: 3px solid #3a3a3a;`;
+            styleString += `border-left: 3px solid #ffffff;`;
         }
         if (index > 5) {
-            styleString += `border-top: 3px solid #3a3a3a;`;
+            styleString += `border-top: 3px solid #ffffff;`;
         }
         box.style = styleString;
         box.addEventListener('click', boxClicked)
@@ -80,4 +89,3 @@ const playerHasWon = () => {
 }
 
 drawBoard();
-
