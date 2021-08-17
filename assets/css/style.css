@@ -172,3 +172,37 @@ button:hover {
 .winning-message-ironman.show {
     display: flex;
 }
+
+.winning-message-captain {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winning-message-captain.show {
+    display: flex;
+}
+
+.draw-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.draw-message.show {
+    display: flex;
+}
