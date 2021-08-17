@@ -3,7 +3,7 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo.png'/>";
-const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/cap-sheild.png' />";
+const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
 let currentPlayer = O_TEXT;
 
 // const ironmanBtn = document.getElementById("ironmanBtn") 
