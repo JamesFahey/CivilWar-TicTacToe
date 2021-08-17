@@ -4,7 +4,9 @@ const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo.png'/>";
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
-let currentPlayer = O_TEXT;
+let currentPlayer = X_TEXT;
+const ironmanWins = document.getElementById("ironman-wins");
+const captainWins = document.getElementById("captain-wins");
 
 // const ironmanBtn = document.getElementById("ironmanBtn") 
 // const captainBtn = document.getElementById("captainBtn");
@@ -16,6 +18,8 @@ let currentPlayer = O_TEXT;
 //         currentPlayer = X_TEXT;
 //     }
 // });
+
+// gameboard design
 
 const drawBoard = () => {
     boxes.forEach((box, index) => {
@@ -43,11 +47,15 @@ const boxClicked = (e) => {
         spaces[id] = currentPlayer;
         e.target.innerHTML = currentPlayer;
 
-        if(playerHasWon()){
-            gameTitle.innerText = `${currentPlayer} has won!`;
+        if(playerHasWon() & currentPlayer === O_TEXT){
+            ironmanWins.classList.add('show');
+            return;
+        } else if(playerHasWon() & currentPlayer === X_TEXT){
+            captainWins.classList.add('show');
             return;
         }
         currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
+        
     }
 }
 
