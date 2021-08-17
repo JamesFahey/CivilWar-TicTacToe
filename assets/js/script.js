@@ -93,6 +93,10 @@ const playerHasWon = () => {
             console.log(`${currentPlayer} wins horizontally across the middle.`)
             return true;
         }
+        if(spaces[2] === currentPlayer && spaces[6] === currentPlayer){
+            console.log(`${currentPlayer} wins horizontally across the middle.`)
+            return true;
+        }
     }
 }
 
