@@ -4,20 +4,27 @@ const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo.png'/>";
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
-let currentPlayer = X_TEXT;
+const restartBtn = document.getElementsByClassName("restartBtn")
+let currentPlayer = X_TEXT || O_TEXT; // for alkis - code wouldnt run as current player wasnt specified so try to solve it with this
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
+const draw = document.getElementById("draw");
+const ironmanBtn = document.getElementById("ironman-Btn");
+const captainBtn = document.getElementById("captain-Btn");
+let count = 0
 
-// const ironmanBtn = document.getElementById("ironmanBtn") 
-// const captainBtn = document.getElementById("captainBtn");
+// player select
 
-// ironmanBtn.addEventListener("click", function(){
-//     if (ironmanBtn.clicked == true){
-//         currentPlayer = O_TEXT;        
-//     } if(no.clicked == true) {
-//         currentPlayer = X_TEXT;
-//     }
-// });
+// if (ironmanBtn) {
+//     ironmanBtn.addEventListener("click", e => {
+//         currentPlayer === O_TEXT
+//     });
+// } else if (captainBtn) {
+//     captainBtn.addEventListener("click", e => {
+//         currentPlayer === X_TEXT
+//     });
+// }
+
 
 // gameboard design
 
@@ -46,12 +53,15 @@ const boxClicked = (e) => {
     if (!spaces[id]){
         spaces[id] = currentPlayer;
         e.target.innerHTML = currentPlayer;
-
+        count++;
         if(playerHasWon() & currentPlayer === O_TEXT){
             ironmanWins.classList.add('show');
             return;
         } else if(playerHasWon() & currentPlayer === X_TEXT){
             captainWins.classList.add('show');
+            return;
+        } else if(count === 9){
+            draw.classList.add('show');
             return;
         }
         currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
@@ -99,5 +109,18 @@ const playerHasWon = () => {
         }
     }
 }
+
+// if (restartBtn) {
+//     restartBtn.addEventListener("click", () => {
+//         spaces.forEach((space, index) => {
+//           spaces[index] = null;
+//         });
+//         boxes.forEach((box) => {
+//           box.innerText = "";
+//         });
+        
+//       });
+// }
+
 
 drawBoard();
