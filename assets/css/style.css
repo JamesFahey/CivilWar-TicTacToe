@@ -206,3 +206,29 @@ button:hover {
 .draw-message.show {
     display: flex;
 }
+
+/* Media queries */
+
+/* For small screen sizes from 550px wide and down */
+
+@media screen and (max-width: 550px) {
+    button {
+        padding: 10px 20px;
+        margin: 3px;
+        font-size: 18px;
+    }
+    
+    #side-select-title {
+        font-size: 200%;
+    }
+
+    #gameboard {
+        width: 300px;
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+    }
+
+}
