@@ -2,8 +2,8 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
-const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo.png'/>";
-const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
+const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
+const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield2.png' />";
 const restartBtn = document.getElementsByClassName("restartBtn")
 let currentPlayer = X_TEXT || O_TEXT; // for alkis - code wouldnt run as current player wasnt specified so try to solve it with this
 const ironmanWins = document.getElementById("ironman-wins");
