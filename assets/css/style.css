@@ -231,4 +231,16 @@ button:hover {
         width: 100px;
     }
 
+    .cap-win-pic {
+        width: 100%;
+    }
+
+    .ironman-win-pic {
+        width: 100%;
+    }
+
+    .draw-pic {
+        width: 100%;
+    }
+
 }
