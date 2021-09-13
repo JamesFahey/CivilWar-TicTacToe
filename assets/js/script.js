@@ -15,6 +15,13 @@ let count = 0
 
 // player select
 
+const getQueryParams = ( params, url ) => {
+    let href = url;
+    let regexp = new RegExp( '[player]' + params + '=([X_Text])', 'i' );
+    let qString = regexp.exec(href);
+    return qString ? qString[1] : null;
+}
+
 // if (ironmanBtn) {
 //     ironmanBtn.addEventListener("click", e => {
 //         currentPlayer === O_TEXT
