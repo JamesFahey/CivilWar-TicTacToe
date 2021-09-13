@@ -1,50 +1,10 @@
 const boxes = Array.from(document.getElementsByClassName('box'));
-
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
-const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
-const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield2.png' />";
-const restartBtn = document.getElementsByClassName("restartBtn")
-let currentPlayer = X_TEXT || O_TEXT; // for alkis - code wouldnt run as current player wasnt specified so try to solve it with this
+let count = 0
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
-const ironmanBtn = document.getElementById("ironman-Btn");
-const captainBtn = document.getElementById("captain-Btn");
-let count = 0
-let player;
-
-// player select
-
-
-
-// function Player(hero) {
-//     this.hero = hero;
-// }
-
-// selectPlayer: function(hero) {
-//     switch (hero) {
-//         case "Ironman":
-//             player = new Player(hero);
-//             break;
-//         case "Captain America":
-//             player = new Player(hero);
-//             break;
-//     }
-
-// }
-
-
-// if (ironmanBtn) {
-//     ironmanBtn.addEventListener("click", e => {
-//         currentPlayer === O_TEXT
-//     });
-// } else if (captainBtn) {
-//     captainBtn.addEventListener("click", e => {
-//         currentPlayer === X_TEXT
-//     });
-// }
-
 
 // gameboard design
 
@@ -68,26 +28,32 @@ const drawBoard = () => {
     })
 };
 
+// Game play
+
 const boxClicked = (e) => {
     const id = e.target.id;
     if (!spaces[id]){
         spaces[id] = currentPlayer;
         e.target.innerHTML = currentPlayer;
         count++;
-        if(playerHasWon() & currentPlayer === O_TEXT){
+        if(playerHasWon() & currentPlayer === ironman){
             ironmanWins.classList.add('show');
             return;
-        } else if(playerHasWon() & currentPlayer === X_TEXT){
+        } else if(playerHasWon() & currentPlayer === captainAmerica){
             captainWins.classList.add('show');
             return;
         } else if(count === 9){
             draw.classList.add('show');
             return;
         }
-        currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
+        currentPlayer = currentPlayer === ironman ? captainAmerica : ironman;
         
     }
 }
+
+
+// register win
+
 
 const playerHasWon = () => {
     if(spaces[0] === currentPlayer){
@@ -129,18 +95,5 @@ const playerHasWon = () => {
         }
     }
 }
-
-// if (restartBtn) {
-//     restartBtn.addEventListener("click", () => {
-//         spaces.forEach((space, index) => {
-//           spaces[index] = null;
-//         });
-//         boxes.forEach((box) => {
-//           box.innerText = "";
-//         });
-        
-//       });
-// }
-
 
 drawBoard();
