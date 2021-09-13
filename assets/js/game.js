@@ -1,4 +1,5 @@
 const boxes = Array.from(document.getElementsByClassName('box'));
+
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
 let count = 0
