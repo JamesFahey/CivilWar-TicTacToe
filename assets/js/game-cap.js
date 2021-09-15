@@ -11,7 +11,7 @@ const restartBtnIron = document.getElementById("restartBtnIron");
 const restartBtnDraw = document.getElementById("restartBtnDraw");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
-const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/sheild3.png' />";
+const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
 let currentPlayer = O_TEXT
 
 // const ironman = X_TEXT
