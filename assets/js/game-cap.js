@@ -6,7 +6,9 @@ let count = 0
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
-const restartBtn = document.getElementById("restartBtn");
+const restartBtnCap = document.getElementById("restartBtnCap");
+const restartBtnIron = document.getElementById("restartBtnIron");
+const restartBtnDraw = document.getElementById("restartBtnDraw");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/sheild3.png' />";
@@ -130,11 +132,15 @@ const restart = () => {
         box.innerText = "";
       });
     captainWins.classList.remove('show');
+    ironmanWins.classList.remove('show');
+    draw.classList.remove('show');
     count = 0
     currentPlayer = O_TEXT
 }
 
-restartBtn.addEventListener('click', restart);
+restartBtnCap.addEventListener('click', restart);
+restartBtnIron.addEventListener('click', restart);
+restartBtnDraw.addEventListener('click', restart);
 
 restart();
 drawBoard();
