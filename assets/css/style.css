@@ -16,6 +16,14 @@ body, html {
     height: 100%;
   }
 
+header {
+    background-color: #696969;
+    color: #fff;
+    text-align: center;
+}
+
+
+
 #home-page {
     background: url(../images/homepage-image.png);
     background-size: cover;
@@ -136,6 +144,13 @@ button:hover {
     color: white
 }
 
+.player-turn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+}
+
 #gameboard {
     width: 450px;
     display: flex;
@@ -152,6 +167,14 @@ button:hover {
     align-items: center;
     color: #3a3a3a;
     font-size: 150px;
+}
+
+.captainAmerica.active {
+    border-bottom: 5px solid blue;
+}
+
+.ironman.active {
+    border-bottom: 5px solid red;
 }
 
 /* winning messages */

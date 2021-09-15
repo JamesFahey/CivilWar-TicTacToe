@@ -6,6 +6,8 @@ let count = 0
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
+let ironman = document.querySelector(".ironman");
+let captainAmerica = document.querySelector(".captainAmerica");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
@@ -117,6 +119,17 @@ const playerHasWon = () => {
             return true;
         }
     }
+}
+
+const upDateTurn = () => {
+    
+    if (currentPlayer === X_TEXT) {
+        ironman.classList.add('active');
+    } else captainAmerica.classList.add('active');
+        
+    ironman.classList.remove('active');
+    captainAmerica.classList.remove('active');
+
 }
 
 drawBoard();

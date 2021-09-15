@@ -124,6 +124,8 @@ const playerHasWon = () => {
 
 
 
+
+
 const restart = () => {
     spaces.forEach((space, index) => {
         spaces[index] = null;
