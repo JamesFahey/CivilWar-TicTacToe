@@ -9,25 +9,25 @@ const draw = document.getElementById("draw");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield2.png' />";
+let currentPlayer = O_TEXT
 
-
-const ironman = X_TEXT
-const captainAmerica = O_TEXT
+// const ironman = X_TEXT
+// const captainAmerica = O_TEXT
 
 // player select
 
 
-const getParameterByName = (name, url = window.location.href) => {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-console.log(ironman);
+// const getParameterByName = (name, url = window.location.href) => {
+//     name = name.replace(/[\[\]]/g, '\\$&');
+//     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+//         results = regex.exec(url);
+//     if (!results) return null;
+//     if (!results[2]) return '';
+//     return decodeURIComponent(results[2].replace(/\+/g, ' '));
+// }
+// console.log(ironman);
 
-currentPlayer = getParameterByName('player');
+// currentPlayer = getParameterByName('player');
 
 // gameboard design
 
