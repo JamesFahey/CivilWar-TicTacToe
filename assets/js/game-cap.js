@@ -6,6 +6,7 @@ let count = 0
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
+const restartBtn = document.getElementById("restartBtn");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/sheild3.png' />";
@@ -119,4 +120,21 @@ const playerHasWon = () => {
     }
 }
 
+
+
+const restart = () => {
+    spaces.forEach((space, index) => {
+        spaces[index] = null;
+    })
+    boxes.forEach((box) => {
+        box.innerText = "";
+      });
+    captainWins.classList.remove('show');
+    count = 0
+    currentPlayer = O_TEXT
+}
+
+restartBtn.addEventListener('click', restart);
+
+restart();
 drawBoard();
