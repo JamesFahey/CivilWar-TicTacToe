@@ -8,7 +8,7 @@ const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
-const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/sheild3.png' />";
+const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
 let currentPlayer = X_TEXT
 
 // const ironman = X_TEXT
