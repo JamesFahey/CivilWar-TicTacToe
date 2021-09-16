@@ -249,6 +249,16 @@ button:hover {
 
 /* Media queries */
 
+/* For medium screen sizes from 650px wide and down */
+
+@media screen and (max-width: 650px) {
+    .player-turn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+
 /* For small screen sizes from 550px wide and down */
 
 @media screen and (max-width: 550px) {
