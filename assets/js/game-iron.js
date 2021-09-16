@@ -6,6 +6,9 @@ let count = 0
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
+const restartBtnCaptain = document.getElementById("restartBtnCaptain");
+const restartBtnIronman = document.getElementById("restartBtnIronman");
+const restartBtnTie = document.getElementById("restartBtnTie");
 let ironman = document.querySelector(".ironman")
 let captainAmerica = document.querySelector(".captainAmerica");
 
@@ -141,6 +144,24 @@ const playerHasWon = () => {
     }
 }
 
+const restart = () => {
+    spaces.forEach((space, index) => {
+        spaces[index] = null;
+    })
+    boxes.forEach((box) => {
+        box.innerText = "";
+      });
+    captainWins.classList.remove('show');
+    ironmanWins.classList.remove('show');
+    draw.classList.remove('show');
+    count = 0
+    currentPlayer = X_TEXT
+}
+
+restartBtnCaptain.addEventListener('click', restart);
+restartBtnIronman.addEventListener('click', restart);
+restartBtnTie.addEventListener('click', restart);
 
 
+restart();
 drawBoard();

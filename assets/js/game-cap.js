@@ -151,5 +151,6 @@ restartBtnCap.addEventListener('click', restart);
 restartBtnIron.addEventListener('click', restart);
 restartBtnDraw.addEventListener('click', restart);
 
+
 restart();
 drawBoard();
