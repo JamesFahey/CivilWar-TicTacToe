@@ -169,13 +169,25 @@ button:hover {
     font-size: 150px;
 }
 
-.captainAmerica.active {
-    border-bottom: 5px solid blue;
+
+.ironman {
+    border-bottom: 5px solid #696969;
 }
 
 .ironman.active {
-    border-bottom: 5px solid red;
+    border-color: red;
 }
+
+
+.captainAmerica {
+    border-bottom: 5px solid #696969;
+}
+
+.captainAmerica.active {
+    border-color: blue;
+}
+
+
 
 /* winning messages */
 

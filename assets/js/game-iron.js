@@ -6,8 +6,9 @@ let count = 0
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
-let ironman = document.querySelector(".ironman");
+let ironman = document.querySelector(".ironman")
 let captainAmerica = document.querySelector(".captainAmerica");
+
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
@@ -49,11 +50,24 @@ const drawBoard = () => {
             styleString += `border-top: 3px solid #ffffff;`;
         }
         box.style = styleString;
+        
         box.addEventListener('click', boxClicked)
     })
 };
 
 // Game play
+
+// const updateTurn = () => {
+//     let ironman = document.querySelector(".ironman")
+//     let captainAmerica = document.querySelector(".captainAmerica");
+//     ironman.classList.remove('active');
+//     captainAmerica.classList.remove('active');
+    
+//     // if (currentPlayer == X_TEXT) {
+//     //     ironman.classList.add('active');
+//     // } else captainAmerica.classList.add('active')
+        
+// }
 
 const boxClicked = (e) => {
     const id = e.target.id;
@@ -72,9 +86,15 @@ const boxClicked = (e) => {
             return;
         }
         currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
-        
+        ironman.classList.remove('active');
+        captainAmerica.classList.remove('active');
+
+        if (currentPlayer == X_TEXT) {
+            ironman.classList.add('active');
+        } else captainAmerica.classList.add('active')
     }
 }
+
 
 
 // register win
@@ -121,15 +141,6 @@ const playerHasWon = () => {
     }
 }
 
-const upDateTurn = () => {
-    
-    if (currentPlayer === X_TEXT) {
-        ironman.classList.add('active');
-    } else captainAmerica.classList.add('active');
-        
-    ironman.classList.remove('active');
-    captainAmerica.classList.remove('active');
 
-}
 
 drawBoard();
