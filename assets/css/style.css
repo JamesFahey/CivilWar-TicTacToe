@@ -17,7 +17,8 @@ body, html {
   }
 
 header {
-    background-color: #696969;
+    margin: 0;
+    background: #696969;
     color: #fff;
     text-align: center;
 }
@@ -132,6 +133,10 @@ button:hover {
 }
 
 /* Game page */
+
+.game-title {
+    padding: 10px;
+}
 
 #game-area {
     padding: 20px;

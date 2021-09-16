@@ -9,6 +9,8 @@ const draw = document.getElementById("draw");
 const restartBtnCap = document.getElementById("restartBtnCap");
 const restartBtnIron = document.getElementById("restartBtnIron");
 const restartBtnDraw = document.getElementById("restartBtnDraw");
+let ironman = document.querySelector(".ironman")
+let captainAmerica = document.querySelector(".captainAmerica");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
@@ -73,7 +75,12 @@ const boxClicked = (e) => {
             return;
         }
         currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
-        
+        ironman.classList.remove('active');
+        captainAmerica.classList.remove('active');
+
+        if (currentPlayer == X_TEXT) {
+            ironman.classList.add('active');
+        } else captainAmerica.classList.add('active')
     }
 }
 
