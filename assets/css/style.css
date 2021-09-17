@@ -108,14 +108,16 @@ header {
     font-size: 180%;
 }
 
-#how-to-play, h2 {
+.how-to-play-title {
     text-align: center;
     font-size: 150%;
+    margin-bottom: 50px;
 }
 
-#how-to-play, ol {
+ol {
     text-align: left;
     font-size: 100%;
+    margin-bottom: 50px;
 }
 
 li {
