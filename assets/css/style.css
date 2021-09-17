@@ -83,16 +83,45 @@ button:hover {
 /* how to play */
 
 header {
-    height: 300px;
+    height: 250px;
 }
 
 #rules-header {
-    
+    background: url(../images/header-image.png);
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: 100vh;
 }
 
 #how-to-play {
-    
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    background-color: #696969;
+    color: white
 }
+
+#rules-title {
+    font-size: 180%;
+}
+
+#how-to-play, h2 {
+    text-align: center;
+    font-size: 150%;
+}
+
+#how-to-play, ol {
+    text-align: left;
+    font-size: 100%;
+}
+
+li {
+    margin: 10px;
+}
+
 
 /* side selection */
 
