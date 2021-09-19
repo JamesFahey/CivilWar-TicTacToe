@@ -106,9 +106,7 @@ const drawBoard = () => {
     //     moves.push(move);
     // }
 
-let id = minimax( spaces, O_TEXT );
 
-spaces[id] = O_TEXT;
     
 
 
@@ -128,7 +126,9 @@ const boxClicked = (e) => {
             draw.classList.add('show');
             return;
         }
-        
+        // let id = minimax( spaces, O_TEXT );
+
+        // spaces[id] = O_TEXT;
 
         currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
         ironman.classList.remove('active');
