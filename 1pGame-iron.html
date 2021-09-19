@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Civil War - Tic Tac Toe</title>
+</head>
+<body>
+    <div id="game-area">
+        <div>
+            <h1 class="game-title">Divided We Stand</h1>
+        </div>
+        <div class= "player-turn">
+            <div class= "captainAmerica">
+                <img src="assets/images/cap-icon.png" alt="Captain America">
+            </div>
+            <div>
+                <a href="index.html"><button>Main Menu</button></a>
+            </div>
+            <div class= "ironman active">
+                <img src="assets/images/ironman-icon.png" alt="Ironman">
+            </div>
+        </div>
+        <div id="gameboard">
+            <div class="box" id="0"></div>
+            <div class="box" id="1"></div>
+            <div class="box" id="2"></div>
+            <div class="box" id="3"></div>
+            <div class="box" id="4"></div>
+            <div class="box" id="5"></div>
+            <div class="box" id="6"></div>
+            <div class="box" id="7"></div>
+            <div class="box" id="8"></div>
+        </div>
+        <div class= "winning-message-ironman" id="ironman-wins">
+            <img class="ironman-win-pic" src="assets/images/ironman-win-image.png" alt="Ironman picture">
+            <h1>Ironman Wins</h1>
+            <button id="restartBtnIronman">Restart</button></a>
+        </div>
+        <div class= "winning-message-captain" id="captain-wins">
+            <img class="cap-win-pic" src="assets/images/cap-win-image.png" alt="Captain America picture">
+            <h1>Captain America Wins</h1>
+            <button id="restartBtnCaptain">Restart</button></a>
+        </div>
+        <div class= "draw-message" id ="draw">
+            <img class="draw-pic" src="assets/images/draw-image.png" alt="Captain America vs Iron Man Civil War">
+            <h1>It's A Draw</h1>
+            <button id="restartBtnTie">Restart</button></a>
+        </div>
+    </div>
+    
+    <script src="assets/js/1pGame-iron.js"></script>
+</body>
+</html>
