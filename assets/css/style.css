@@ -383,6 +383,11 @@ table tr td:last-child {
         font-size: 12px;
     }
 
+    td {
+        height:  100px;
+        width:  100px;
+    }
+
 }
 
 /* For small screen sizes from 330px wide and down */

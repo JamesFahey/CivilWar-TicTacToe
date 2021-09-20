@@ -12,6 +12,8 @@ const winCombos = [
 	[6, 4, 2]
 ]
 const ironmanWins = document.getElementById("ironman-wins");
+const captainWins = document.getElementById("captain-wins");
+const draw = document.getElementById("draw");
 
 // const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 // const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
@@ -63,6 +65,9 @@ function gameOver(gameWon) {
         if (gameWon.player == huPlayer) {
             ironmanWins.classList.add('show');
         }
+		if (gameWon.player == aiPlayer) {
+            captainWins.classList.add('show');
+        }
 		// document.getElementById(index).style.backgroundColor =
 		// 	gameWon.player == huPlayer ? "blue" : "red";
 	}
@@ -88,10 +93,11 @@ function bestSpot() {
 function checkTie() {
 	if (emptySquares().length == 0) {
 		for (var i = 0; i < cells.length; i++) {
-			cells[i].style.backgroundColor = "green";
+			// cells[i].style.backgroundColor = "green";
 			cells[i].removeEventListener('click', turnClick, false);
 		}
-		declareWinner("Tie Game!")
+		draw.classList.add('show');
+		// declareWinner("Tie Game!")
 		return true;
 	}
 	return false;
