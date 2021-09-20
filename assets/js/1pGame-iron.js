@@ -126,9 +126,7 @@ const boxClicked = (e) => {
             draw.classList.add('show');
             return;
         }
-        // let id = minimax( spaces, O_TEXT );
-
-        // spaces[id] = O_TEXT;
+        
 
         currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
         ironman.classList.remove('active');
@@ -188,21 +186,25 @@ const playerHasWon = () => {
     }
 }
 
+// let id = minimax( spaces, O_TEXT );
+
+// spaces[id] = O_TEXT;
+
 function minimax(spaces, currentPlayer){
     // BASE
 if( playerHasWon() & currentPlayer === O_TEXT ) return { evaluation : +10 };
 if( playerHasWon() & currentPlayer === X_TEXT      ) return { evaluation : -10 };
 if( count === 9                     ) return { evaluation : 0 };
 
-let moves = [];
+// let moves = [];
 
-let move = {};
-move.id = id;
+// let move = {};
+// move.id = id;
 // THE MOVE EVALUATION
 if( currentPlayer == O_TEXT){
-    move.evaluation = minimax(spaces, X_TEXT).evaluation;
+    spaces.evaluation = minimax(spaces, X_TEXT).evaluation;
 }else{
-    move.evaluation = minimax(spaces, O_TEXT).evaluation;
+    spaces.evaluation = minimax(spaces, O_TEXT).evaluation;
     }
 
 // MINIMAX ALGORITHM
@@ -211,19 +213,19 @@ let bestMove;
 if(currentPlayer == O_TEXT){
     // MAXIMIZER
     let bestEvaluation = -Infinity;
-    for(let i = 0; i < moves.length; i++){
-        if( moves[i].evaluation > bestEvaluation ){
-            bestEvaluation = moves[i].evaluation;
-            bestMove = moves[i];
+    for(let i = 0; i < spaces.length; i++){
+        if( spaces[i].evaluation > bestEvaluation ){
+            bestEvaluation = spaces[i].evaluation;
+            bestMove = spaces[i];
         }
     }
 }else{
     // MINIMIZER
     let bestEvaluation = +Infinity;
-    for(let i = 0; i < moves.length; i++){
-        if( moves[i].evaluation < bestEvaluation ){
-            bestEvaluation = moves[i].evaluation;
-            bestMove = moves[i];
+    for(let i = 0; i < spaces.length; i++){
+        if( spaces[i].evaluation < bestEvaluation ){
+            bestEvaluation = spaces[i].evaluation;
+            bestMove = spaces[i];
         }
     }
 }
