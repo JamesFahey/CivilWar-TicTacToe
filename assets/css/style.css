@@ -347,3 +347,16 @@ li {
     }
 
 }
+
+/* For small screen sizes from 330px wide and down */
+
+@media screen and (max-width: 330px) {
+    #side-select-title {
+        font-size: 150%;
+    }
+
+    #player-choice, button {
+        padding: 10px 5px;
+    }
+
+}
