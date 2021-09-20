@@ -30,6 +30,9 @@ function startGame() {
 		cells[i].innerText = '';
 		cells[i].style.removeProperty('background-color');
 		cells[i].addEventListener('click', turnClick, false);
+		captainWins.classList.remove('show');
+        ironmanWins.classList.remove('show');
+        draw.classList.remove('show');
 	}
 }
 
