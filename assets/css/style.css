@@ -338,4 +338,12 @@ li {
         width: 100%;
     }
 
+    #player-choice {
+        justify-content: space-between;
+    }
+
+    #player-choice, button {
+        font-size: 12px;
+    }
+
 }
