@@ -19,6 +19,8 @@ const ironmanWins = document.getElementById("ironman-wins");
 const cells = document.querySelectorAll('.cell');
 startGame();
 
+
+
 function startGame() {
 	// document.querySelector(".endgame").style.display = "none";
 	origBoard = Array.from(Array(9).keys());
