@@ -11,6 +11,7 @@ const winCombos = [
 	[0, 4, 8],
 	[6, 4, 2]
 ]
+const ironmanWins = document.getElementById("ironman-wins");
 
 // const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 // const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
@@ -57,19 +58,22 @@ function checkWin(board, player) {
 
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
-		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
+        if (gameWon.player == huPlayer) {
+            ironmanWins.classList.add('show');
+        }
+		// document.getElementById(index).style.backgroundColor =
+		// 	gameWon.player == huPlayer ? "blue" : "red";
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	// declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
 }
 
-function declareWinner(who) {
-	document.querySelector(".endgame").style.display = "block";
-	document.querySelector(".endgame .text").innerText = who;
-}
+// function declareWinner(who) {
+// 	document.querySelector(".endgame").style.display = "block";
+// 	document.querySelector(".endgame .text").innerText = who;
+// }
 
 function emptySquares() {
 	return origBoard.filter(s => typeof s == 'number');
