@@ -1,257 +1,156 @@
-const boxes = Array.from(document.getElementsByClassName('box'));
-
-const gameTitle = document.getElementById("gameTitle");
-const spaces = [null, null, null, null, null, null, null, null, null,];
-let count = 0
+var origBoard;
+const huPlayer = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
+const aiPlayer = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
+const winCombos = [
+	[0, 1, 2],
+	[3, 4, 5],
+	[6, 7, 8],
+	[0, 3, 6],
+	[1, 4, 7],
+	[2, 5, 8],
+	[0, 4, 8],
+	[6, 4, 2]
+]
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
-const restartBtnCaptain = document.getElementById("restartBtnCaptain");
-const restartBtnIronman = document.getElementById("restartBtnIronman");
-const restartBtnTie = document.getElementById("restartBtnTie");
-let ironman = document.querySelector(".ironman")
-let captainAmerica = document.querySelector(".captainAmerica");
 
+// const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
+// const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
 
-const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
-const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
-let currentPlayer = X_TEXT
-
-// const ironman = X_TEXT
-// const captainAmerica = O_TEXT
-
-// player select
-
-
-// const getParameterByName = (name, url = window.location.href) => {
-//     name = name.replace(/[\[\]]/g, '\\$&');
-//     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-//         results = regex.exec(url);
-//     if (!results) return null;
-//     if (!results[2]) return '';
-//     return decodeURIComponent(results[2].replace(/\+/g, ' '));
-// }
-// console.log(ironman);
-
-// currentPlayer = getParameterByName('player');
-
-// gameboard design
-
-const drawBoard = () => {
-    boxes.forEach((box, index) => {
-        let styleString = '';
-        if (index < 3) {
-            styleString += `border-bottom: 3px solid #ffffff;`;
-        }
-        if (index % 3 === 0) {
-            styleString += `border-right: 3px solid #ffffff;`;
-        }
-        if (index % 3 === 2) {
-            styleString += `border-left: 3px solid #ffffff;`;
-        }
-        if (index > 5) {
-            styleString += `border-top: 3px solid #ffffff;`;
-        }
-        box.style = styleString;
-        
-        box.addEventListener('click', boxClicked)
-    })
-};
-
-// Game play
-
-// const updateTurn = () => {
-//     let ironman = document.querySelector(".ironman")
-//     let captainAmerica = document.querySelector(".captainAmerica");
-//     ironman.classList.remove('active');
-//     captainAmerica.classList.remove('active');
-    
-//     // if (currentPlayer == X_TEXT) {
-//     //     ironman.classList.add('active');
-//     // } else captainAmerica.classList.add('active')
-        
-// }
+const cells = document.querySelectorAll('.cell');
+startGame();
 
 
 
+function startGame() {
+	// document.querySelector(".endgame").style.display = "none";
+	origBoard = Array.from(Array(9).keys());
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].innerText = '';
+		cells[i].style.removeProperty('background-color');
+		cells[i].addEventListener('click', turnClick, false);
+	}
+}
 
-    // // SAVE ALL MOVES AND THEIR EVALUATIONS
-    // let moves = [];
+function turnClick(square) {
+	if (typeof origBoard[square.target.id] == 'number') {
+		turn(square.target.id, huPlayer)
+		if (!checkTie()) turn(bestSpot(), aiPlayer);
+	}
+}
 
-    // // LOOP OVER THE EMPTY SPACES TO EVALUATE THEM
-    // for( let i = 0; i < EMPTY_SPACES.length; i++){
-    //     // GET THE ID OF THE EMPTY SPACE
-    //     let id = EMPTY_SPACES[i];
+function turn(squareId, player) {
+	origBoard[squareId] = player;
+	document.getElementById(squareId).innerHTML = player;
+	let gameWon = checkWin(origBoard, player)
+	if (gameWon) gameOver(gameWon)
+} 
 
-    //     // BACK UP THE SPACE
-    //     let backup = spaces[id];
+function checkWin(board, player) {
+	let plays = board.reduce((a, e, i) => 
+		(e === player) ? a.concat(i) : a, []);
+	let gameWon = null;
+	for (let [index, win] of winCombos.entries()) {
+		if (win.every(elem => plays.indexOf(elem) > -1)) {
+			gameWon = {index: index, player: player};
+			break;
+		}
+	}
+	return gameWon;
+}
 
-    //     // MAKE THE MOVE FOR THE PLAYER
-    //     spaces[id] = currentPlayer;
-
-    //     // SAVE THE MOVE'S ID AND EVALUATION
-    //     let move = {};
-    //     move.id = id;
-    //     // THE MOVE EVALUATION
-    //     if( currentPlayer == O_TEXT){
-    //         move.evaluation = minimax(spaces, X_TEXT).evaluation;
-    //     }else{
-    //         move.evaluation = minimax(spaces, O_TEXT).evaluation;
-    //     }
-
-    //     // RESTORE SPACE
-    //     spaces[id] = backup;
-
-    //     // SAVE MOVE TO MOVES ARRAY
-    //     moves.push(move);
-    // }
-
-
-    
-
-
-const boxClicked = (e) => {
-    const id = e.target.id;
-    if (!spaces[id]){
-        spaces[id] = currentPlayer;
-        e.target.innerHTML = currentPlayer;
-        count++;
-        if(playerHasWon() & currentPlayer === X_TEXT){
+function gameOver(gameWon) {
+	for (let index of winCombos[gameWon.index]) {
+        if (gameWon.player == huPlayer) {
             ironmanWins.classList.add('show');
-            return;
-        } else if(playerHasWon() & currentPlayer === O_TEXT){
+        }
+		if (gameWon.player == aiPlayer) {
             captainWins.classList.add('show');
-            return;
-        } else if(count === 9){
-            draw.classList.add('show');
-            return;
         }
-        
-
-        currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
-        ironman.classList.remove('active');
-        captainAmerica.classList.remove('active');
-
-        if (currentPlayer == X_TEXT) {
-            ironman.classList.add('active');
-        } else captainAmerica.classList.add('active')
-    }
+		
+		// document.getElementById(index).style.backgroundColor =
+		// 	gameWon.player == huPlayer ? "blue" : "red";
+	}
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].removeEventListener('click', turnClick, false);
+	}
+	// declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
 }
 
+// function declareWinner(who) {
+// 	document.querySelector(".endgame").style.display = "block";
+// 	document.querySelector(".endgame .text").innerText = who;
+// }
 
-
-
-
-// register win
-
-
-const playerHasWon = () => {
-    if(spaces[0] === currentPlayer){
-        if(spaces[1] === currentPlayer && spaces[2] === currentPlayer){
-            console.log(`${currentPlayer} wins up top.`)
-            return true;
-        }
-        if(spaces[3] === currentPlayer && spaces[6] === currentPlayer){
-            console.log(`${currentPlayer} wins on the left.`)
-            return true;
-        }
-        if(spaces[4] === currentPlayer && spaces[8] === currentPlayer){
-            console.log(`${currentPlayer} wins diagonally.`)
-            return true;
-        }
-    } 
-    if(spaces[8] === currentPlayer){
-        if(spaces[2] === currentPlayer && spaces[5] === currentPlayer){
-            console.log(`${currentPlayer} wins on the right.`)
-            return true;
-        }
-        if(spaces[6] === currentPlayer && spaces[7] === currentPlayer){
-            console.log(`${currentPlayer} wins on the bottom.`)
-            return true;
-        }
-    }
-    if(spaces[4] === currentPlayer){
-        if(spaces[1] === currentPlayer && spaces[7] === currentPlayer){
-            console.log(`${currentPlayer} wins vertically in the middle.`)
-            return true;
-        }
-        if(spaces[3] === currentPlayer && spaces[5] === currentPlayer){
-            console.log(`${currentPlayer} wins horizontally across the middle.`)
-            return true;
-        }
-        if(spaces[2] === currentPlayer && spaces[6] === currentPlayer){
-            console.log(`${currentPlayer} wins horizontally across the middle.`)
-            return true;
-        }
-    }
+function emptySquares() {
+	return origBoard.filter(s => typeof s == 'number');
 }
 
-// let id = minimax( spaces, O_TEXT );
-
-// spaces[id] = O_TEXT;
-
-function minimax(spaces, currentPlayer){
-    // BASE
-if( playerHasWon() & currentPlayer === O_TEXT ) return { evaluation : +10 };
-if( playerHasWon() & currentPlayer === X_TEXT      ) return { evaluation : -10 };
-if( count === 9                     ) return { evaluation : 0 };
-
-// let moves = [];
-
-// let move = {};
-// move.id = id;
-// THE MOVE EVALUATION
-if( currentPlayer == O_TEXT){
-    spaces.evaluation = minimax(spaces, X_TEXT).evaluation;
-}else{
-    spaces.evaluation = minimax(spaces, O_TEXT).evaluation;
-    }
-
-// MINIMAX ALGORITHM
-let bestMove;
-
-if(currentPlayer == O_TEXT){
-    // MAXIMIZER
-    let bestEvaluation = -Infinity;
-    for(let i = 0; i < spaces.length; i++){
-        if( spaces[i].evaluation > bestEvaluation ){
-            bestEvaluation = spaces[i].evaluation;
-            bestMove = spaces[i];
-        }
-    }
-}else{
-    // MINIMIZER
-    let bestEvaluation = +Infinity;
-    for(let i = 0; i < spaces.length; i++){
-        if( spaces[i].evaluation < bestEvaluation ){
-            bestEvaluation = spaces[i].evaluation;
-            bestMove = spaces[i];
-        }
-    }
+function bestSpot() {
+	return minimax(origBoard, aiPlayer).index;
 }
 
-return bestMove;
+function checkTie() {
+	if (emptySquares().length == 0) {
+		for (var i = 0; i < cells.length; i++) {
+			// cells[i].style.backgroundColor = "green";
+			cells[i].removeEventListener('click', turnClick, false);
+		}
+		draw.classList.add('show');
+		// declareWinner("Tie Game!")
+		return true;
+	}
+	return false;
 }
 
+function minimax(newBoard, player) {
+	var availSpots = emptySquares();
 
-const restart = () => {
-    spaces.forEach((space, index) => {
-        spaces[index] = null;
-    })
-    boxes.forEach((box) => {
-        box.innerText = "";
-      });
-    captainWins.classList.remove('show');
-    ironmanWins.classList.remove('show');
-    draw.classList.remove('show');
-    count = 0
-    currentPlayer = X_TEXT
+	if (checkWin(newBoard, huPlayer)) {
+		return {score: -10};
+	} else if (checkWin(newBoard, aiPlayer)) {
+		return {score: 10};
+	} else if (availSpots.length === 0) {
+		return {score: 0};
+	}
+	var moves = [];
+	for (var i = 0; i < availSpots.length; i++) {
+		var move = {};
+		move.index = newBoard[availSpots[i]];
+		newBoard[availSpots[i]] = player;
+
+		if (player == aiPlayer) {
+			var result = minimax(newBoard, huPlayer);
+			move.score = result.score;
+		} else {
+			var result = minimax(newBoard, aiPlayer);
+			move.score = result.score;
+		}
+
+		newBoard[availSpots[i]] = move.index;
+
+		moves.push(move);
+	}
+
+	var bestMove;
+	if(player === aiPlayer) {
+		var bestScore = -10000;
+		for(var i = 0; i < moves.length; i++) {
+			if (moves[i].score > bestScore) {
+				bestScore = moves[i].score;
+				bestMove = i;
+			}
+		}
+	} else {
+		var bestScore = 10000;
+		for(var i = 0; i < moves.length; i++) {
+			if (moves[i].score < bestScore) {
+				bestScore = moves[i].score;
+				bestMove = i;
+			}
+		}
+	}
+
+	return moves[bestMove];
 }
-
-restartBtnCaptain.addEventListener('click', restart);
-restartBtnIronman.addEventListener('click', restart);
-restartBtnTie.addEventListener('click', restart);
-
-
-restart();
-drawBoard();

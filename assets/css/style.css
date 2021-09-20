@@ -356,6 +356,7 @@ table tr td:last-child {
 
     #gameboard {
         width: 300px;
+        height: 300px;
     }
 
     .box {

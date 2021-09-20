@@ -1,6 +1,6 @@
 var origBoard;
-const huPlayer = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
-const aiPlayer = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
+const huPlayer = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
+const aiPlayer = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -63,10 +63,10 @@ function checkWin(board, player) {
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
         if (gameWon.player == huPlayer) {
-            ironmanWins.classList.add('show');
+            captainWins.classList.add('show');
         }
 		if (gameWon.player == aiPlayer) {
-            captainWins.classList.add('show');
+            ironmanWins.classList.add('show');
         }
 		
 		// document.getElementById(index).style.backgroundColor =
