@@ -329,6 +329,16 @@ table tr td:last-child {
     display: flex;
 }
 
+/* 404 page  */
+
+#error-section {
+    background: url(../images/404-image.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+
 /* Media queries */
 
 /* For medium screen sizes from 650px wide and down */
@@ -389,6 +399,10 @@ table tr td:last-child {
         width:  100px;
     }
 
+    .pick-ironman {
+        margin-right: 25px;
+    }
+
 }
 
 /* For small screen sizes from 330px wide and down */
@@ -402,4 +416,5 @@ table tr td:last-child {
         padding: 10px 5px;
     }
 
+}
 }
