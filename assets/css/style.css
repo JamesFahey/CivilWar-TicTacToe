@@ -373,7 +373,26 @@ table tr td:last-child {
     text-decoration: none;
 }
 
+.player-select {
+    padding: 15px 25px;
+    margin: 5px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #3a3a3a;
+    border: none;
+    border-radius: 15px;
+    transition: 200ms transform;
+    text-decoration: none;
+}
+
 .button:hover {
+    transform: translateY(-2px);
+}
+
+.player-select:hover {
     transform: translateY(-2px);
 }
 
@@ -403,6 +422,12 @@ table tr td:last-child {
         padding: 10px 20px;
         margin: 3px;
         font-size: 18px;
+    }
+
+    .player-select {
+        padding: 10px 20px;
+        margin: 3px;
+        font-size: 12px;
     }
     
     #side-select-title {
@@ -444,7 +469,7 @@ table tr td:last-child {
         width:  100px;
     }
 
-    .pick-ironman {
+    #pick-ironman {
         margin-right: 25px;
     }
 
@@ -467,6 +492,10 @@ table tr td:last-child {
 
     .how-to-play-title {
         margin-bottom: 0px;
+    }
+
+    .player-select {
+        padding: 10px 5px;
     }
 
 }
