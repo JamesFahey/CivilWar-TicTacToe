@@ -398,6 +398,12 @@ table tr td:last-child {
         margin: 3px;
         font-size: 18px;
     }
+
+    .button {
+        padding: 10px 20px;
+        margin: 3px;
+        font-size: 18px;
+    }
     
     #side-select-title {
         font-size: 200%;
@@ -429,7 +435,7 @@ table tr td:last-child {
         justify-content: space-between;
     }
 
-    #player-choice, button {
+    #player-choice button {
         font-size: 12px;
     }
 
@@ -451,7 +457,7 @@ table tr td:last-child {
         font-size: 150%;
     }
 
-    #player-choice, button {
+    #player-choice button {
         padding: 10px 5px;
     }
 
