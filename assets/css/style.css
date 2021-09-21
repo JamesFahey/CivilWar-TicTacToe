@@ -338,6 +338,46 @@ table tr td:last-child {
     height: 100%;
 }
 
+.error-message {
+    margin: 150px 10% 0 0;
+    color: #fff;
+    background-color: rgba(175, 85, 82, 0.7);
+    max-width: 500px;
+    position: absolute;
+    right: 1%;
+    padding: 30px;
+}
+
+.error-message h2 {
+    text-align: center;
+    font-size: 150%;
+    color: white;
+}
+
+.error-message h3 {
+    text-align: center;
+    font-size: 150%;
+}
+
+.button {
+    padding: 15px 25px;
+    margin: 5px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #3a3a3a;
+    border: none;
+    border-radius: 15px;
+    transition: 200ms transform;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
 
 /* Media queries */
 
