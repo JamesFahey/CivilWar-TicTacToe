@@ -16,24 +16,6 @@ const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
 let currentPlayer = O_TEXT;
 
-// const ironman = X_TEXT
-// const captainAmerica = O_TEXT
-
-// player select
-
-
-// const getParameterByName = (name, url = window.location.href) => {
-//     name = name.replace(/[\[\]]/g, '\\$&');
-//     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-//         results = regex.exec(url);
-//     if (!results) return null;
-//     if (!results[2]) return '';
-//     return decodeURIComponent(results[2].replace(/\+/g, ' '));
-// }
-// console.log(ironman);
-
-// currentPlayer = getParameterByName('player');
-
 // gameboard design
 
 const drawBoard = () => {
