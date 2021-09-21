@@ -15,16 +15,14 @@ const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
 
-// const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
-// const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
 
 const cells = document.querySelectorAll('.cell');
 startGame();
 
-
+// start game
 
 function startGame() {
-	// document.querySelector(".endgame").style.display = "none";
+	
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
@@ -35,6 +33,8 @@ function startGame() {
         draw.classList.remove('show');
 	}
 }
+
+// gameplay
 
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
@@ -50,6 +50,8 @@ function turn(squareId, player) {
 	if (gameWon) gameOver(gameWon)
 } 
 
+// Check for winner
+
 function checkWin(board, player) {
 	let plays = board.reduce((a, e, i) => 
 		(e === player) ? a.concat(i) : a, []);
@@ -63,6 +65,8 @@ function checkWin(board, player) {
 	return gameWon;
 }
 
+// Register win
+
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
         if (gameWon.player == huPlayer) {
@@ -72,19 +76,14 @@ function gameOver(gameWon) {
             captainWins.classList.add('show');
         }
 		
-		// document.getElementById(index).style.backgroundColor =
-		// 	gameWon.player == huPlayer ? "blue" : "red";
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	// declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	
 }
 
-// function declareWinner(who) {
-// 	document.querySelector(".endgame").style.display = "block";
-// 	document.querySelector(".endgame .text").innerText = who;
-// }
+// ai set up
 
 function emptySquares() {
 	return origBoard.filter(s => typeof s == 'number');
@@ -94,18 +93,21 @@ function bestSpot() {
 	return minimax(origBoard, aiPlayer).index;
 }
 
+// Check and register tie game
+
 function checkTie() {
 	if (emptySquares().length == 0) {
 		for (var i = 0; i < cells.length; i++) {
-			// cells[i].style.backgroundColor = "green";
+			
 			cells[i].removeEventListener('click', turnClick, false);
 		}
 		draw.classList.add('show');
-		// declareWinner("Tie Game!")
 		return true;
 	}
 	return false;
 }
+
+// Minimax set up
 
 function minimax(newBoard, player) {
 	var availSpots = emptySquares();
@@ -135,6 +137,8 @@ function minimax(newBoard, player) {
 
 		moves.push(move);
 	}
+
+// Minimax Algorithm 
 
 	var bestMove;
 	if(player === aiPlayer) {

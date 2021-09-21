@@ -58,19 +58,7 @@ const drawBoard = () => {
     })
 };
 
-// Game play
-
-// const updateTurn = () => {
-//     let ironman = document.querySelector(".ironman")
-//     let captainAmerica = document.querySelector(".captainAmerica");
-//     ironman.classList.remove('active');
-//     captainAmerica.classList.remove('active');
-    
-//     // if (currentPlayer == X_TEXT) {
-//     //     ironman.classList.add('active');
-//     // } else captainAmerica.classList.add('active')
-        
-// }
+// Game play - show result message - show player turn
 
 const boxClicked = (e) => {
     const id = e.target.id;
@@ -143,6 +131,8 @@ const playerHasWon = () => {
         }
     }
 }
+
+// restart function
 
 const restart = () => {
     spaces.forEach((space, index) => {

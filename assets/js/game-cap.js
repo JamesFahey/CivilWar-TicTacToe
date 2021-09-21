@@ -56,7 +56,7 @@ const drawBoard = () => {
     })
 };
 
-// Game play
+// Game play - show result message - show player turn
 
 const boxClicked = (e) => {
     const id = e.target.id;
@@ -130,7 +130,7 @@ const playerHasWon = () => {
 }
 
 
-
+// restart function
 
 
 const restart = () => {
