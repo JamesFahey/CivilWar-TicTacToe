@@ -10,7 +10,7 @@ const winCombos = [
 	[2, 5, 8],
 	[0, 4, 8],
 	[6, 4, 2]
-]
+];
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
@@ -38,7 +38,7 @@ function startGame() {
 
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
-		turn(square.target.id, huPlayer)
+		turn(square.target.id, huPlayer);
 		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
 	}
 }
@@ -46,8 +46,8 @@ function turnClick(square) {
 function turn(squareId, player) {
 	origBoard[squareId] = player;
 	document.getElementById(squareId).innerHTML = player;
-	let gameWon = checkWin(origBoard, player)
-	if (gameWon) gameOver(gameWon)
+	let gameWon = checkWin(origBoard, player);
+	if (gameWon) gameOver(gameWon);
 } 
 
 // Check for winner

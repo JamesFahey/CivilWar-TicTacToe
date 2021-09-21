@@ -2,19 +2,19 @@ const boxes = Array.from(document.getElementsByClassName('box'));
 
 const gameTitle = document.getElementById("gameTitle");
 const spaces = [null, null, null, null, null, null, null, null, null,];
-let count = 0
+let count = 0;
 const ironmanWins = document.getElementById("ironman-wins");
 const captainWins = document.getElementById("captain-wins");
 const draw = document.getElementById("draw");
 const restartBtnCap = document.getElementById("restartBtnCap");
 const restartBtnIron = document.getElementById("restartBtnIron");
 const restartBtnDraw = document.getElementById("restartBtnDraw");
-let ironman = document.querySelector(".ironman")
+let ironman = document.querySelector(".ironman");
 let captainAmerica = document.querySelector(".captainAmerica");
 
 const X_TEXT = document.createElement('img').innerHTML="<img src='assets/images/ironman-logo2.png'/>";
 const O_TEXT = document.createElement('img').innerHTML="<img src='assets/images/shield.png' />";
-let currentPlayer = O_TEXT
+let currentPlayer = O_TEXT;
 
 // const ironman = X_TEXT
 // const captainAmerica = O_TEXT
@@ -52,8 +52,8 @@ const drawBoard = () => {
             styleString += `border-top: 3px solid #ffffff;`;
         }
         box.style = styleString;
-        box.addEventListener('click', boxClicked)
-    })
+        box.addEventListener('click', boxClicked);
+    });
 };
 
 // Game play - show result message - show player turn
@@ -64,10 +64,10 @@ const boxClicked = (e) => {
         spaces[id] = currentPlayer;
         e.target.innerHTML = currentPlayer;
         count++;
-        if(playerHasWon() & currentPlayer === X_TEXT){
+        if(playerHasWon() && currentPlayer === X_TEXT){
             ironmanWins.classList.add('show');
             return;
-        } else if(playerHasWon() & currentPlayer === O_TEXT){
+        } else if(playerHasWon() && currentPlayer === O_TEXT){
             captainWins.classList.add('show');
             return;
         } else if(count === 9){
@@ -80,9 +80,9 @@ const boxClicked = (e) => {
 
         if (currentPlayer == X_TEXT) {
             ironman.classList.add('active');
-        } else captainAmerica.classList.add('active')
+        } else captainAmerica.classList.add('active');
     }
-}
+};
 
 
 // register win
@@ -91,43 +91,43 @@ const boxClicked = (e) => {
 const playerHasWon = () => {
     if(spaces[0] === currentPlayer){
         if(spaces[1] === currentPlayer && spaces[2] === currentPlayer){
-            console.log(`${currentPlayer} wins up top.`)
+            console.log(`${currentPlayer} wins up top.`);
             return true;
         }
         if(spaces[3] === currentPlayer && spaces[6] === currentPlayer){
-            console.log(`${currentPlayer} wins on the left.`)
+            console.log(`${currentPlayer} wins on the left.`);
             return true;
         }
         if(spaces[4] === currentPlayer && spaces[8] === currentPlayer){
-            console.log(`${currentPlayer} wins diagonally.`)
+            console.log(`${currentPlayer} wins diagonally.`);
             return true;
         }
     } 
     if(spaces[8] === currentPlayer){
         if(spaces[2] === currentPlayer && spaces[5] === currentPlayer){
-            console.log(`${currentPlayer} wins on the right.`)
+            console.log(`${currentPlayer} wins on the right.`);
             return true;
         }
         if(spaces[6] === currentPlayer && spaces[7] === currentPlayer){
-            console.log(`${currentPlayer} wins on the bottom.`)
+            console.log(`${currentPlayer} wins on the bottom.`);
             return true;
         }
     }
     if(spaces[4] === currentPlayer){
         if(spaces[1] === currentPlayer && spaces[7] === currentPlayer){
-            console.log(`${currentPlayer} wins vertically in the middle.`)
+            console.log(`${currentPlayer} wins vertically in the middle.`);
             return true;
         }
         if(spaces[3] === currentPlayer && spaces[5] === currentPlayer){
-            console.log(`${currentPlayer} wins horizontally across the middle.`)
+            console.log(`${currentPlayer} wins horizontally across the middle.`);
             return true;
         }
         if(spaces[2] === currentPlayer && spaces[6] === currentPlayer){
-            console.log(`${currentPlayer} wins horizontally across the middle.`)
+            console.log(`${currentPlayer} wins horizontally across the middle.`);
             return true;
         }
     }
-}
+};
 
 
 // restart function
@@ -136,16 +136,16 @@ const playerHasWon = () => {
 const restart = () => {
     spaces.forEach((space, index) => {
         spaces[index] = null;
-    })
+    });
     boxes.forEach((box) => {
         box.innerText = "";
       });
     captainWins.classList.remove('show');
     ironmanWins.classList.remove('show');
     draw.classList.remove('show');
-    count = 0
-    currentPlayer = O_TEXT
-}
+    count = 0;
+    currentPlayer = O_TEXT;
+};
 
 restartBtnCap.addEventListener('click', restart);
 restartBtnIron.addEventListener('click', restart);
