@@ -89,7 +89,6 @@ header {
 #rules-header {
     background: url(../images/header-image.png);
     background-position: center;
-    /* background-repeat: no-repeat; */
     background-size: 100vh;
 }
 
@@ -454,6 +453,14 @@ table tr td:last-child {
 
     #player-choice, button {
         padding: 10px 5px;
+    }
+
+    header {
+        height: 220px;
+    }
+
+    .how-to-play-title {
+        margin-bottom: 0px;
     }
 
 }
