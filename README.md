@@ -160,7 +160,7 @@ Once the site has had a period of activeness other features that will be added i
 
 •	Add a game mode with an increased grid size; 4 X 4, or 5 X 5
 
-•	•	Add a game mode with an increased grid size; 4 X 4, or 5 X 5
+•	Add a difficulty slider for the ai option
 
 ## Technologies used
 
