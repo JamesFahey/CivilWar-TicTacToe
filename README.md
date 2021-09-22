@@ -1,104 +1,301 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Civil War - Tic Tac Toe
 
-Welcome JamesFahey,
+![Responsive screens](/assets/images/read-me/responsive.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+## Project introduction
 
-## Gitpod Reminders
+Civil War Tic Tac Toe takes the classic Tic Tac Toe (noughts and crosses) and incorporates Marvels production Civil War. As featured in the film, uses will decide which side they stand by choosing to play as either Captain America or Iron Man. The traditional X’s and O’s have been upgraded with icons representing the two characters. As per the original rules, the objective is to be the first player to get 3 of their icons (vertically, horizontally of diagonally) in a row. Once a result has been achieved, a relevant corresponding message will be presented to the user(s). 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Website developers goals
 
-`python3 -m http.server`
+•	Create a Tic Tac Toe game using Javascript 
 
-A blue button should appear to click: _Make Public_,
+•	Utilise the popularity of Marvel by incorporating it as the main theme 
 
-Another blue button should appear to click: _Open Browser_.
+•	Generate an enjoyable game to engage friends and family
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Target audience
 
-A blue button should appear to click: _Make Public_,
+Predominantly aiming towards Marvel and wider superhero fanbases, but also designed to appeal to those wanting to take advantage of a traditional and quick recreational game. Expecting to particularly capture the millennial generations appreciation of both classic games, as well as, modern fast paced and are of age in retrospect to the theme presented.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## User stories
 
-To log into the Heroku toolbelt CLI:
+### As a developer:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+• To provide the user with a simple yet competitive multiplayer game.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+• Set a tone of two sides in conflict.
 
-------
+• Provide the user with clear gameplay instructions.
 
-## Release History
+### As a new user:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+• A clear understanding the rules and operations of the game.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+• To feel as though I am playing an official Marvel game.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+• To become immersed in the story behind the game.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+• The option to choose between the two sides.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+• A player indicator, to able to visually identify who’s turn it is. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+• Have the opportunity of either friends/family but also an AI as an opponent. 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+• Once the game is completed, the accessibility to quickly play again.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+• • Once the game is completed, the accessibility to quickly play again.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Website structure
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The use of bold imagery immediately sets and accentuates conflict between the two opposing sides to give the user an immersive experience. Initially pages are kept minimalistic, so not to distract from the tone being set. The site is fully responsive and working consistently across all devices, maintaining optimum user satisfaction. The user will experience a fully interactive site, from the initial character selection to its corresponding game of Tic Tac Toe. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Wireframes
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+I used the website wireframes.cc to create my wireframes.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Desktop
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Wireframe homepage](/assets/images/read-me/wireframe-home.png)
+![Wireframe side select](/assets/images/read-me/wireframe-side-select.png)
+![Wireframe gameboard](/assets/images/read-me/wireframe-gameboard.png)
 
-------
+### Mobile
 
-## FAQ about the uptime script
+![Wireframe mobile homepage](/assets/images/read-me/mobile-home.png)
+![Wireframe mobile side select](/assets/images/read-me/mobile-side-select.png)
+![Wireframe mobile gameboard](/assets/images/read-me/mobile-gameboard.png)
 
-**Why have you added this script?**
+## Surface
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## Colours
 
-**How will this affect me?**
+### Colours used throughout the site:
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+•	Background: ##696969
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+•	Font colour: #fff
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+•	Button colour: #3a3a3a
 
-**So….?**
+•	Error message area: rgba(175, 85, 82, 0.7)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+•	Winning message background: rgba(0, 0, 0, 0.9)
 
-**Can I opt out?**
+•	Player indicator: Red and Blue
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Fonts
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+As there was limited text throughout the site I chose to use Lato for all aspects with Sans Serif as the fall back.
 
-**Anything more?**
+## Images
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### I used images from:
 
----
+•	pngkey.com was used for the ironman gameplay icon 
 
-Happy coding!
+•	toppng.com was used for the Captain America gameplay icon 
+
+•	best-wallpaper.net/ was used for the player select pages
+
+•	https://dribbble.com/ was used for the player indicator images
+
+
+## Features
+
+## Existing features
+
+## Home Page Image
+
+The homepage demonstrates to the user the commencing battle between two sides. The choice of image effectively conveys the chosen theme of the game. 
+
+![Homepage image](/assets/images/read-me/Home-page.png)
+
+## Navigation Bar
+
+The navigation bar enables the user to determine if they are playing singularly, against an AI or play with friends/family. Achieved by selecting the ‘one player’ or ‘two player’ buttons respectively. The user will als be provided with an ‘how to play’ option, displaying the game rules  
+
+![Navigation bar](/assets/images/read-me/nav-bar.png)
+
+## Player Select Image
+
+Again, the choice of image was carefully selected to perpetuate the previously mentioned theme of conflict. 
+
+![Player Select image](/assets/images/read-me/player-choice.png)
+
+## Player Select 
+
+Here, the user must decide their alliance by choosing to play as either Captain America or Ironman. The user can also return to the main menu to alter their character selection, game type or to check the rules. As seen in the image above. 
+
+## Player Indicator 
+
+Using JavaScript, the player indicator will highlight the player currently taking their turn. Once the player has made their move, the highlighting line will switch to the opposing players character icon. However, this function has been removed and altered in the one player option and instead, is used to establish the human player. In the section in both game modes the user can also return to the main menu. 
+
+![Player Indicator](/assets/images/read-me/player-indicator.png)
+
+![Player Indicator](/assets/images/read-me/player-indicator2.png)
+
+## Game Board
+
+Here the classic game board for Tic Tac Toe is displayed. Players will take turns choosing their game icon placement on the board, until a result is achieved.
+
+![Game Board](/assets/images/read-me/gameboard.png)
+
+## Winning Message
+
+Once a result has been reached the user will receive the corresponding message with the option the restart the game 
+
+![Winning Message](/assets/images/read-me/iron-win.png)
+
+![Winning Message](/assets/images/read-me/cap-win.png)
+
+![Winning Message](/assets/images/read-me/draw.png)
+
+## Features to be added 
+
+Once the site has had a period of activeness other features that will be added include; 
+
+•	More character options, for their respective sides. As established in the game themes corresponding cinematic production and comics
+
+•	Add a game mode with an increased grid size; 4 X 4, or 5 X 5
+
+•	•	Add a game mode with an increased grid size; 4 X 4, or 5 X 5
+
+## Technologies used
+
+•	HTML5
+
+•	CSS
+
+•	Javascript
+
+•	Google fonts
+
+•	GitHub
+
+•	Gitpod
+
+•	Wireframe.cc
+
+## Testing
+
+### Functionality testing
+
+Throughout the project Chrome developer tools have been used to continually check new implementations and solve any problems encountered.
+
+## Compatibility testing
+
+The site has been tested across multiple platforms and devices. Initial testing was completed on chrome developer tools ensuring the site was fully responsive across all screen sizes.
+
+Further testing was done using different hardware devices including Samsung Galaxy S20, Iphone 6s plus, Apple Ipad . The site has also been tested by friends and family successfully on a wider range of devices.
+
+## User stories testing
+
+### As developer:
+
+• I want to provide the user with a simple but competitive multiplayer game
+
+The user can compete either against friends or ai in quick fast paced games
+
+• I want to set a tone of two sides in conflict.
+
+Images used throughout the site reflect two sides in battle. The user also has to choose which side they are on 
+
+• I want to provide the user with clear gameplay instructions
+
+The user is provided with a how to play section from the main menu
+
+### As a new user:
+
+• I want to understand how the game works and its rules
+
+The user is provided with a how to play section from the main menu
+
+• I want to feel like I’m playing an official marvel game
+
+Marvels main protagonists, Ironman and Captain America, are prominent throughout the site
+
+• I want to feel like there’s a story behind the game
+
+Images used throughout the site portray two sides in conflict
+
+• I want the option to choose between the two sides
+
+The user is given the option of playing as either Captain America or Ironman
+
+• I want a player indicator to identify who’s turn it is
+
+Each player has a character icon and this will be highlighted when its their turn
+
+• I want to play with friends and family but also against an AI
+
+I want to play with friends and family but also against an ai
+
+## Issues during site development
+
+### Implementing a minimax algorithm
+
+Upon completion of the 2 player option, it was decided the project would greatly benefit from a 1 player option. Therefore, implementing an AI player and corresponding minimax algorithm into the existing code was attempted. This was troublesome due to the number of ways of coding a Tic Tac Toe game. The guides for executing a minimax algorithm, in some areas, were significantly different to the code I had used, and could not be merged with the existing code. Consequently the project was restarted, following a guide for the 1 player option.   
+
+### Implementing a character select function
+
+From the player select screen the goal was to create a function that would determine which character played first dependent upon the user’s choice. I attempted using a query string value to determine which player to initialise. This worked to some extent as I was able to pull the string value over to the gameboard. However, this method proved unsuccessful in linking the string to the relevant image required for the gameboard. I determined a disproportionate amount of time was being used resolving this issue. Although the outcome was achievable implementing a work around utilised more effective time management. Thus, creating two game pages, one for each character always being set to the current player.
+
+## Validator Testing
+
+•	HTML - No errors were returned when passing through the official W3C validator
+
+•	CSS - No errors were found when passing through the official (Jigsaw) validator
+
+•	Javascript - No errors were found when passing through the official (JSHint) validator
+
+## Deployment
+
+The project was deployed on GitHub.Pages. The project was developed using Gitpod where the git version control system was used to commit all changes. The changes were then saved to Github using the push command.
+
+In order to deploy the project the following steps occurred;
+
+•	Log in to GitHub and click on repository to deploy (CivilWar-TicTacToe)
+
+•	select Settings and find GitHub Pages section 
+
+•	from source select none and then Milestone-Projects branch.
+
+•	click save and page was deployed after auto-refresh.
+
+The live link to site is as follows: 
+
+https://jamesfahey.github.io/CivilWar-TicTacToe/
+
+
+## Credits
+
+## Content
+
+•	Throughout the project I used several video tutorials from YouTube. For the initial set up and the 2 player game I used; https://www.youtube.com/watch?v=Y-GkMjUZsmM, https://www.youtube.com/watch?v=E621N5GBKv8 and https://www.youtube.com/watch?v=VjjZ2MaX0Ts&t=11164s. Then for the 1 player game I followed: https://www.youtube.com/watch?v=P2TcQ3h0ipQ 
+
+## Media
+
+### Images 
+
+•	dribbble.com/- Designer – Aleksandar Savic
+
+### Map
+
+•	Taken from Google maps
+
+### Design and content inspiration
+
+•	Marvel Civil War
+
+
+## Thanks
+
+Special thank you to Adegbenga Adeye for his support and guidance throughout the project 
+
+And the support team at Code Institute for granting my extension after I contracted Covid-19
+
+
+
+
