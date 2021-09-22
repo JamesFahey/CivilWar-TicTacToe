@@ -148,7 +148,7 @@ Once a result has been reached the user will receive the corresponding message w
 
 ![Winning Message](/assets/images/read-me/iron-win.png)
 
-![Winning Message](/assets/images/read-me/cap-win.png)
+![Winning Message](/assets/images/read-me/cap-wins.png)
 
 ![Winning Message](/assets/images/read-me/draw.png)
 
@@ -194,7 +194,7 @@ Further testing was done using different hardware devices including Samsung Gala
 
 ### As developer:
 
-• I want to provide the user with a simple but competitive multiplayer game
+• I want to provide the user with a simple yet competitive multiplayer game.
 
 The user can compete either against friends or ai in quick fast paced games
 
@@ -208,7 +208,7 @@ The user is provided with a how to play section from the main menu
 
 ### As a new user:
 
-• I want to understand how the game works and its rules
+• I want a clear understanding the rules and operations of the game
 
 The user is provided with a how to play section from the main menu
 
@@ -216,7 +216,7 @@ The user is provided with a how to play section from the main menu
 
 Marvels main protagonists, Ironman and Captain America, are prominent throughout the site
 
-• I want to feel like there’s a story behind the game
+• I want to become immersed in the story behind the game
 
 Images used throughout the site portray two sides in conflict
 
@@ -224,13 +224,21 @@ Images used throughout the site portray two sides in conflict
 
 The user is given the option of playing as either Captain America or Ironman
 
-• I want a player indicator to identify who’s turn it is
+• I want a player indicator, to be able to visually identify who’s turn it is
 
 Each player has a character icon and this will be highlighted when its their turn
 
-• I want to play with friends and family but also against an AI
+• I want to have the opportunity of either friends/family but also an AI as an opponent
 
-I want to play with friends and family but also against an ai
+I want to play with friends and family but also against an AI
+
+• I want to, once the game is completed, have the accessibility to quickly play again.
+
+When the user receives the correct winning message, they will have the option to restart the game
+
+• I want to be able to navigate from the game screen to the main menu, to access the rules again
+
+The main menu will be present across the site including the game page
 
 ## Issues during site development
 
