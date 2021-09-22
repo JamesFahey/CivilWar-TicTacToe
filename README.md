@@ -280,6 +280,15 @@ The live link to site is as follows:
 
 https://jamesfahey.github.io/CivilWar-TicTacToe/
 
+To run localy:
+
+•	Log in to GitHub and click on repository to download (CivilWar-TicTacToe)
+
+•	select Code and click Download the ZIP file.
+
+•	after download you can extract the file and use it in your local environment
+
+•	Alternatively you can Clone or Fork this repository (CivilWar-TicTacToe) into your github account.
 
 ## Credits
 
