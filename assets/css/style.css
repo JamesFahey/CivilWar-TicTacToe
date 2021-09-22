@@ -397,6 +397,24 @@ table tr td:last-child {
     text-decoration: none;
 }
 
+.game-main-menu {
+    padding: 15px 25px;
+    margin: 5px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #3a3a3a;
+    border-right: 2px red solid;
+    border-left: 2px blue solid;
+    border-top: 2px blue solid;
+    border-bottom: 2px red solid;
+    border-radius: 15px;
+    transition: 200ms transform;
+    text-decoration: none;
+}
+
 .button:hover {
     transform: translateY(-2px);
 }
@@ -405,6 +423,9 @@ table tr td:last-child {
     transform: translateY(-2px);
 }
 
+.game-main-menu {
+    transform: translateY(-2px);
+}
 
 /* Media queries */
 
@@ -435,6 +456,12 @@ table tr td:last-child {
 
     .player-select {
         padding: 10px 20px;
+        margin: 3px;
+        font-size: 12px;
+    }
+
+    .game-main-menu {
+        padding: 10px 15px;
         margin: 3px;
         font-size: 12px;
     }
@@ -484,9 +511,9 @@ table tr td:last-child {
 
 }
 
-/* For small screen sizes from 330px wide and down */
+/* For small screen sizes from 340px wide and down */
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 340px) {
     #side-select-title {
         font-size: 150%;
     }
@@ -504,6 +531,10 @@ table tr td:last-child {
     }
 
     .player-select {
+        padding: 10px 5px;
+    }
+
+    .game-main-menu {
         padding: 10px 5px;
     }
 
