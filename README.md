@@ -57,14 +57,20 @@ I used the website wireframes.cc to create my wireframes.
 
 ### Desktop
 
+### Home page
 ![Wireframe homepage](/assets/images/read-me/wireframe-home.png)
+### Side select
 ![Wireframe side select](/assets/images/read-me/wireframe-side-select.png)
+### Game page
 ![Wireframe gameboard](/assets/images/read-me/wireframe-gameboard.png)
 
 ### Mobile
 
+### Home page
 ![Wireframe mobile homepage](/assets/images/read-me/mobile-home.png)
+### Side select
 ![Wireframe mobile side select](/assets/images/read-me/mobile-side-select.png)
+### Game page
 ![Wireframe mobile gameboard](/assets/images/read-me/mobile-gameboard.png)
 
 ## Surface
@@ -131,8 +137,6 @@ Here, the user must decide their alliance by choosing to play as either Captain 
 ## Player Indicator 
 
 Using JavaScript, the player indicator will highlight the player currently taking their turn. Once the player has made their move, the highlighting line will switch to the opposing players character icon. However, this function has been removed and altered in the one player option and instead, is used to establish the human player. In the section in both game modes the user can also return to the main menu. 
-
-![Player Indicator](/assets/images/read-me/player-indicator.png)
 
 ![Player Indicator](/assets/images/read-me/player-indicator2.png)
 
